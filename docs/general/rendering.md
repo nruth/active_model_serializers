@@ -209,6 +209,10 @@ link(:link_name) { url_for(controller: 'controller_name', action: 'index', only_
 
 #### include
 
+For a resource, nested include can be done using the [json-api comma-separated relationship names   ](http://jsonapi.org/format/#fetching-includes) format. For example a user might `include: "posts.images"` to side-load the users' posts and their images.
+
+For a collection resource, with CollectionSerializer, the include option is forwarded to each serializer, so shouldn't include the resource name. Continuing the previous example, a collection of users would look the same `include: "posts.images"`
+
 PR please :)
 
 #### Overriding the root key
